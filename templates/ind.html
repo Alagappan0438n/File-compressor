@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Compression Tool</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Theme Toggle Switch -->
+    <div class="theme-toggle">
+        <label class="switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="container">
+        <h1>File Compression Tool</h1>
+
+        <h3>Compress File</h3>
+        <form action="/compress" method="POST" enctype="multipart/form-data">
+            <div class="file-input">
+                <label for="compress-file">Choose file to compress:</label>
+                <input type="file" id="compress-file" name="file" required>
+            </div>
+            <button class="button" type="submit">Compress</button>
+        </form>
+
+        <h3>Decompress File</h3>
+        <form action="/decompress" method="POST" enctype="multipart/form-data">
+            <div class="file-input">
+                <label for="decompress-file">Choose .zlib file to decompress:</label>
+                <input type="file" id="decompress-file" name="file" required>
+            </div>
+            <button class="button" type="submit">Decompress</button>
+        </form>
+    </div>
+
+    <footer>Created with ❤️ using Flask</footer>
+    <script src="/static/script.js"></script>
+</body>
+</html>
