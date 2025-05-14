@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const themeSwitch = document.getElementById('theme-switch');
+  const themeSwitch = document.getElementById('theme-toggle');
   const compressForm = document.querySelector("form[action='/compress']");
   const decompressForm = document.querySelector("form[action='/decompress']");
 

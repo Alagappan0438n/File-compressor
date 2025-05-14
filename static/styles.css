@@ -107,24 +107,46 @@ button:active {
 }
 
 .status-message {
-  display: none;
-  margin-top: 20px;
-  text-align: center;
-  color: #4caf50;
-  font-weight: bold;
-  animation: fadeIn 0.8s ease-in-out;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: none; /* Hide initially */
+  transition: opacity 0.5s ease, bottom 0.5s ease;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
+.status-message.show {
+  display: block;
+  opacity: 1;
+  bottom: 20px;
+}
+
+.status-message.hide {
+  opacity: 0;
+  bottom: -100px; /* Hides it off-screen */
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.7;
   }
-  to {
+  50% {
     opacity: 1;
-    transform: scale(1);
+  }
+  100% {
+    opacity: 0.7;
   }
 }
+
+.status-message.show {
+  animation: pulse 1.5s infinite;
+}
+
 
 /* Theme Toggle Switch */
 .theme-toggle {
