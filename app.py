@@ -92,5 +92,4 @@ def decompress():
     return send_file(output_path, as_attachment=True)
 
 if __name__ == '__main__':
-    # Use Waitress as the production server
-    serve(app, host='0.0.0.0', port=8080)
+    app.run(debug=True, host='0.0.0.0', port=5000)
