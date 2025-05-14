@@ -13,7 +13,7 @@
 body.light {
   --bg-color: #f5f6fa;
   --container-bg: #ffffffc2;
-  --text-color: #ffffff;
+  --text-color: #000000;
   --accent: #2b4cb3;
   --button-bg: #3a60ff;
   --button-hover: #2749b3;
