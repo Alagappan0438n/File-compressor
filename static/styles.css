@@ -1,0 +1,177 @@
+/* Theme Colors */
+:root {
+  --bg-color: #000000;
+  --container-bg: rgba(26, 26, 46, 0.7);
+  --text-color: #ccc;
+  --accent: #7289da;
+  --button-bg: #5865f2;
+  --button-hover: #4752c4;
+  --input-bg: #000000;
+}
+
+/* Light Theme Overrides */
+body.light {
+  --bg-color: #f5f6fa;
+  --container-bg: #ffffffc2;
+  --text-color: #ffffff;
+  --accent: #2b4cb3;
+  --button-bg: #3a60ff;
+  --button-hover: #2749b3;
+  --input-bg: #e0e0e0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.container {
+  background: var(--container-bg);
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 90%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.3s ease;
+}
+
+h1 {
+  color: var(--accent);
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  margin-bottom: 20px;
+  text-shadow: 0 0 6px rgba(114, 137, 218, 0.4);
+}
+
+label {
+  display: block;
+  margin: 15px 0 5px;
+}
+
+input[type="file"],
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 15px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+
+input[type="file"]::file-selector-button {
+  background: #3a3a55;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #4b4b70;
+}
+
+button {
+  background-color: var(--button-bg);
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(21, 28, 100, 0.3);
+  transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.status-message {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+  color: #4caf50;
+  font-weight: bold;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Theme Toggle Switch */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #b7b4b4;
+  transition: 0.4s;
+  border-radius: 34px;
+  height: 100%;
+  width: 100%;
+}
+
+.slider::before {
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  position: absolute;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #181515;
+}
+
+input:checked + .slider::before {
+  transform: translateX(24px);
+}
