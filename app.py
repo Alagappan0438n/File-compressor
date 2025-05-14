@@ -55,7 +55,7 @@ def decompress_file(input_path, output_path_base):
 def index():
     """Main route that displays the file upload forms"""
     message = request.args.get('message')  # Optional message for status
-    return render_template('index.html', message=message)
+    return render_template('ind.html', message=message)
 
 @app.route('/compress', methods=['POST'])
 def compress():
